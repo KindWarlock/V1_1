@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "Enter the size of matrix: ";
+	int a, b;
+	cin >> a >> b;
+	cout << "Enter the (x,y) of the point: ";
+	int x, y, i;
+	cin >> x >> y;
+	int j = y;
+	for (y; y >= 1; y--) {
+		i = 0;
+		for (i; i < x - y; i++) {
+			cout << x - i << " ";
+			if (x - i < 10) cout << " ";	//выравнивание под прямоугольник. на >= 100 снова ломается, но в консоль даже один ряд не помещается, т.е. будет незаметно 
+		}
+		for (i; (i < y + x - 1) && (i < a); i++) {
+			cout << y << " ";
+			if (y < 10) cout << " ";
+		}
+		for (i; i < a; i++) {
+			cout << y + (i - x - y + 2) << " ";
+			if (y + (i - x - y + 2) < 10) cout << " ";
+		}
+		cout << endl;
+	}
+	for (y = 2; y <= b - j + 1; y++) {
+		i = 0;
+		for (i; i < x - y; i++) {
+			cout << x - i << " ";
+			if (x - i < 10) cout << " ";
+		}
+		for (i; (i < y + x - 1) && (i < a); i++) {
+			cout << y << " ";
+			if (y < 10) cout << " ";
+		}
+		for (i; i < a; i++) {
+			cout << y + (i - x - y + 2) << " ";
+			if (y + (i - x - y + 2) < 10) cout << " ";
+		}
+		cout << endl;
+	}
+	return(0);
+}
